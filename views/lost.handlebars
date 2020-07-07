@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1TWM3X3E"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+
+  		gtag('config', 'G-WZ1TWM3X3E');
+	</script>
+   <link rel="stylesheet" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <link href="/css/introHCI2.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery.js"></script>
+   <script src="js/introHCI.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://kit.fontawesome.com/afe8ca4a6e.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+</head>
+<body>
+	<div class="top">
+<!-- 		<form class="example" action="account">
+	  		 <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search for items..." title="Type in a name"style="display: none;">
+	  		 <button id="account" class="account" onclick="window.location.href = 'account';"><i class="fa fa-user" aria-hidden="true"></i></button> -->
+<!-- </form> -->
+		<div class="dropdown"> 
+		  <button type="button" class="dropbtn" onclick="myFunction()"><i class="fas fa-sliders-h" style="pointer-events: none;"></i></button>
+		  <div class="container" id="container1">
+		  	<a onclick="sortOld()">Sort By Oldest</a>
+		  	<a onclick="sortNew()">Sort By Newest</a>
+		  </div>
+		</div>
+			<div class="but">
+	 				<button id="lost" class="lost" onclick="switchFtoL()">Lost</button>
+					<button id="found" class="found" onclick="switchLtoF()">Found</button>
+			</div>
+				<div class="search">
+			 		<button type = "button" class="search" onclick="myFunctionShow()"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+<path d="M21.6992 19.0204L17.4152 14.7368C17.2219 14.5435 16.9598 14.4361 16.6848 14.4361H15.9844C17.1703 12.9194 17.875 11.0118 17.875 8.93663C17.875 4 13.8746 0 8.9375 0C4.00039 0 0 4 0 8.93663C0 13.8733 4.00039 17.8733 8.9375 17.8733C11.0129 17.8733 12.9207 17.1686 14.4375 15.9828V16.6831C14.4375 16.9581 14.5449 17.2202 14.7383 17.4135L19.0223 21.6971C19.4262 22.101 20.0793 22.101 20.4789 21.6971L21.6949 20.4812C22.0988 20.0773 22.0988 19.4243 21.6992 19.0204ZM8.9375 14.4361C5.89961 14.4361 3.4375 11.9785 3.4375 8.93663C3.4375 5.89903 5.89531 3.43716 8.9375 3.43716C11.9754 3.43716 14.4375 5.89474 14.4375 8.93663C14.4375 11.9742 11.9797 14.4361 8.9375 14.4361Z" fill="black" fill-opacity="0.54"/></svg></button>
+				</div>
+	</div>
+				<div class="search1" id="myInput1">
+				 <div class="search1border">	
+				 <svg class="onbar" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+<path d="M21.6992 19.0204L17.4152 14.7368C17.2219 14.5435 16.9598 14.4361 16.6848 14.4361H15.9844C17.1703 12.9194 17.875 11.0118 17.875 8.93663C17.875 4 13.8746 0 8.9375 0C4.00039 0 0 4 0 8.93663C0 13.8733 4.00039 17.8733 8.9375 17.8733C11.0129 17.8733 12.9207 17.1686 14.4375 15.9828V16.6831C14.4375 16.9581 14.5449 17.2202 14.7383 17.4135L19.0223 21.6971C19.4262 22.101 20.0793 22.101 20.4789 21.6971L21.6949 20.4812C22.0988 20.0773 22.0988 19.4243 21.6992 19.0204ZM8.9375 14.4361C5.89961 14.4361 3.4375 11.9785 3.4375 8.93663C3.4375 5.89903 5.89531 3.43716 8.9375 3.43716C11.9754 3.43716 14.4375 5.89474 14.4375 8.93663C14.4375 11.9742 11.9797 14.4361 8.9375 14.4361Z" fill="white"/></svg>
+				</div>
+		  		 <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search for items..." title="Type in a name">
+		  		</div>
+	<div class="post">
+		{{#each posts}}
+		   <div class="individual" id="{{id}}">
+		      <img src="{{image}}" class="img-responsive">
+
+		    <button type="button" class="options"><svg width="22" height="7" viewBox="0 0 22 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8125 3.375C13.8125 5.24062 12.4329 6.75 10.7278 6.75C9.02269 6.75 7.64316 5.24062 7.64316 3.375C7.64316 1.50938 9.02269 0 10.7278 0C12.4329 0 13.8125 1.50938 13.8125 3.375ZM18.2681 0C16.5629 0 15.1834 1.50938 15.1834 3.375C15.1834 5.24062 16.5629 6.75 18.2681 6.75C19.9732 6.75 21.3527 5.24062 21.3527 3.375C21.3527 1.50938 19.9732 0 18.2681 0ZM3.18756 0C1.48243 0 0.102905 1.50938 0.102905 3.375C0.102905 5.24062 1.48243 6.75 3.18756 6.75C4.89268 6.75 6.27221 5.24062 6.27221 3.375C6.27221 1.50938 4.89268 0 3.18756 0Z" fill="black"/>
+</svg></button>
+		      <h1 class="pad">{{name}}</h1>
+		      <p class="date">{{date}}</p>
+		      <p class="pad">{{description}}</p>
+<!-- 		      <a class="pad" style="text-decoration: underline;">Contact Info</a><br>
+ --><!-- 		      <a class="pad" href = "tel:{{contact}}">{{contact}}</a><p><br></p>
+ -->		      <!-- Add contact info -->
+<!--             <span class="span" id="moreText"><p class="span">Last Seen: {{lastseen}}</p><p class="span">Date: {{date}}</p></span>
+ -->
+<!--             <button class="more"><i class="fa fa-angle-down"></i></button>
+ -->		   </div>
+		{{/each}}
+	</div>
+	<div class="bottom">
+		<button id="home1" type = "button" onclick="home()"><svg width="28" height="28" viewBox="0 0 28 28" fill="white" xmlns="http://www.w3.org/2000/svg">
+<path id="home" d="M11.6666 23.3333V16.3333H16.3333V23.3333H22.1666V14H25.6666L14 3.5L2.33331 14H5.83331V23.3333H11.6666Z" fill="black" fill-opacity="0.54"/></svg></button>
+		<button type = "button" onclick="window.location.href = 'post';"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.333328 12C0.333328 5.55999 5.56001 0.333313 12 0.333313C18.44 0.333313 23.6667 5.55999 23.6667 12C23.6667 18.44 18.44 23.6666 12 23.6666C5.56001 23.6666 0.333328 18.44 0.333328 12ZM13.1667 13.1666H17.8333V10.8333H13.1667V6.16665H10.8333V10.8333H6.16666V13.1666H10.8333V17.8333H13.1667V13.1666Z" fill="black" fill-opacity="0.54"/></svg></button>
+
+		<button type = "button"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21 18.375V12.5417C21 8.95999 19.0984 5.96165 15.75 5.16832V4.375C15.75 3.40668 14.9684 2.625 14 2.625C13.0317 2.625 12.25 3.40668 12.25 4.375V5.16832C8.91336 5.96165 7.00002 8.94834 7.00002 12.5417V18.375L4.66669 20.7083V21.875H23.3333V20.7083L21 18.375ZM14 25.375C15.2834 25.375 16.3334 24.325 16.3334 23.0417H11.6667C11.6667 24.325 12.7167 25.375 14 25.375ZM9.33335 19.5417H18.6667V12.5417C18.6667 9.64832 16.905 7.29167 14 7.29167C11.095 7.29167 9.33335 9.64832 9.33335 12.5417V19.5417Z" fill="black" fill-opacity="0.54"/>
+</svg></button>
+
+		<button type = "button" onclick="window.location.href = 'account';"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14 2.33331C7.55996 2.33331 2.33331 7.55999 2.33331 14C2.33331 20.44 7.55996 25.6666 14 25.6666C20.44 25.6666 25.6666 20.44 25.6666 14C25.6666 7.55999 20.44 2.33331 14 2.33331ZM8.24826 21.3266C8.74998 20.2766 11.8066 19.25 14 19.25C16.1933 19.25 19.2615 20.2766 19.7515 21.3266C18.1649 22.5866 16.17 23.3333 14 23.3333C11.8299 23.3333 9.8349 22.5866 8.24826 21.3266ZM14 16.9166C15.7033 16.9166 19.7518 17.605 21.42 19.635C22.61 18.0716 23.3333 16.1233 23.3333 14C23.3333 8.85498 19.145 4.66665 14 4.66665C8.85495 4.66665 4.66665 8.85498 4.66665 14C4.66665 16.1233 5.38998 18.0716 6.57999 19.635C8.24825 17.605 12.2966 16.9166 14 16.9166ZM14 6.99998C11.7368 6.99998 9.91665 8.81998 9.91665 11.0833C9.91665 13.3466 11.7368 15.1666 14 15.1666C16.2632 15.1666 18.0833 13.3466 18.0833 11.0833C18.0833 8.81998 16.2632 6.99998 14 6.99998ZM12.25 11.0833C12.25 12.0516 13.0316 12.8333 14 12.8333C14.9683 12.8333 15.75 12.0516 15.75 11.0833C15.75 10.115 14.9683 9.33331 14 9.33331C13.0316 9.33331 12.25 10.115 12.25 11.0833Z" fill="black" fill-opacity="0.54"/>
+</svg></button>
+	</div>
+</body>
+
+</html>
+
+

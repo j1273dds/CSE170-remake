@@ -1,0 +1,357 @@
+input{
+-webkit-appearance: button;
+   -moz-appearance:    none;
+   appearance:         none;
+}
+* {
+  margin:auto;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  background-color: #FFFFFF;
+  font-family:"poppins";
+}
+
+.top {
+    position:fixed;
+    width:100%;
+    background-color: #FFFFFF;
+    z-index: 1;
+    height:78px;
+    box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(27.1828px);
+}
+
+.bottom {
+    width: 100%;
+    height: 71px;
+    position: fixed;
+    margin-bottom: 30px;
+    /* bottom: 0px; */
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    margin-top:-15px;
+}
+.but{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+button#lost {
+    float: left;
+    height: 45px;
+    width: 25%;
+    background-color: transparent;
+    color: black;
+    font-size: 22px;
+    border: transparent;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+button#found {
+    float: left;
+    height: 45px;
+    width: 25%;
+    background-color: transparent;
+    color: black;
+    font-size: 22px;
+    border: transparent;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 7px;
+  font-size: 17px;
+  color:#FFFFFF;
+  border: 1px solid transparent;
+  float: left;
+  width: 85%;
+  background: #f1f1f1;
+  margin-top:8px;
+  border-radius: 50px;
+  display:none;
+}
+
+/* Style the submit button */
+
+form.example button {
+    position: relative;
+    font-size: 25px;
+    float: right;
+    width: 13%;
+    padding-top: 10px;
+    background: #FFFFFF;
+    color: white;
+    border: transparent;
+    border-left: none;
+    cursor: pointer;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form.example{
+  width:85%;
+  display:inline-block;
+}
+
+.sort {
+  float: right;
+  width: 20%;
+  padding: 20px;
+  background: #FFFFFF;
+  color: white;
+  font-size: 19px;
+  border: transparent;
+  border-left: none; 
+  cursor: pointer;
+}
+.search{
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    float: right;
+    display: inline-block;
+    width:25%;
+}
+button.search{
+    background-color: transparent;
+    padding: 10px;
+    font-size: 22px;
+    width: 75px;
+    height: 45px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.54);
+    width: 100%;
+    border:none;
+}
+.dropdown{
+    position: absolute;
+    float: left;
+    display: inline-block;
+    width: 25%;
+    bottom:0px;
+    z-index: 1;
+
+}
+.dropbtn{
+    background-color: transparent;
+    padding: 10px;
+    font-size: 22px;
+    width: 75px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.54);
+    width: 100%;  
+    border: none;
+}
+.middle {
+ margin-bottom:50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+}
+
+button.plus{
+    position:fixed;
+    bottom: 30px;    
+    border-radius: 25px;
+    width: 150px;
+    height: 50px;
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 20px;
+    border: transparent;
+    border-left: none;
+    cursor: pointer;
+}
+.individual {
+    position:relative;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: black;
+    margin-top: 10px;
+    width: 355px;
+    height: 370px;
+    margin-bottom:10px;
+}
+button.options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border:none;
+    opacity: .5;
+    border-radius: 5px;
+    }
+.img-responsive {
+  width:355px;
+  height:175px;
+  object-fit: cover;   
+}
+
+#moreText {
+   display: none;
+}
+
+.more {
+    border-radius: 50%;
+    position: relative;
+    float: right;
+    bottom: 15px;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    border: transparent;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.moreText p{
+  visibility:hidden;
+}
+button.back {
+/*    padding: 18px;
+*/}
+h1{
+  text-align:center;
+  color:black;
+  font-size:18px;
+}
+::placeholder{
+  color:rgba(0, 0, 0, 0.54);
+  }
+  h1#maintext{
+    font-size:20px;
+    color:white;
+  }
+  .bottom-padding{
+    width: 100%;
+    height: 10px;
+    padding-bottom: 50px;
+    background: #2196F3;
+  }
+
+.span {
+  margin-left: 10px;
+}
+p.date{
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 12px;
+}
+.pad{
+  padding-left:10px;
+  padding-right:10px;
+
+}
+p.pad{
+  font-size:14px;
+  padding-top:10px;
+}
+.bottom{
+  position:fixed;
+  bottom:0px;
+  box-shadow: 0px -0.8px 0px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(27.1828px);
+  height:78px;
+  width:100%;
+  margin-bottom:0px;
+}
+.bottom button{
+  width:25%;
+  border:none;
+  background-color: white;
+  padding-bottom: 20px;
+
+}
+.container {
+    display:none;
+    margin-left: 10px;
+    width: 150px;
+    background-color: #EEEEEE;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+.container a{
+  display:block;
+  padding:12px 4px;
+  color:black;}
+path#home{
+  fill:#11D4FF;
+  fill-opacity:1;}
+#home1{
+  border-top:3px solid #11D4FF;}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#myInput1{
+  position:fixed;
+  display:none;
+  justify-content:center;
+  margin-top:88px;
+  width:100%;
+  height:50px;
+  z-index: 1;}
+
+.post{
+  padding-top: 78px;
+  padding-bottom:78px;}
+
+#myInput{
+  position:absolute;
+  display:none;
+  border:none;
+  text-align: center;
+  color:black;
+  width:80%;
+  height:45px;
+  border-radius:5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+
+svg.onbar{
+  z-index: 1;
+}
+
+.search1border {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    left: 38px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    background-color: #11D4FF;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;}
+
+
