@@ -161,7 +161,7 @@ function myFunction() {
   }
 });
 function home(){
-          window.location.href = '/found'; 
+          window.location.href = '/lost'; 
 }
 
 function myFunctionShow(){

@@ -41,7 +41,7 @@ input[type="text"]{
    margin: auto;
    font-size: 15px;
    width: 87%;
-   height: 30px;
+   height: 45px;
    display: block;
    padding:10px;
 }
@@ -50,7 +50,7 @@ input[type="url"]{
    margin: auto;
    font-size: 15px;
    width: 87%;
-   height: 30px;
+   height: 45px;
    display: block;
    padding:10px;
    color:#555;
@@ -149,16 +149,13 @@ path#add{
     border-top:3px solid #11D4FF;
 }
 .post {
-    border:1px solid black;
     margin-top: 108px;
     font-size: 16px;
     background-color: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: black;
     margin-bottom: 10px;
     width: 340px;
     height: 600px;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 h1{
   text-align: center;
