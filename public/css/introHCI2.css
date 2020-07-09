@@ -356,7 +356,7 @@ path#home{
   border:none;
   text-align: center;
   color:black;
-  width:80%;
+  width:90%;
   height:45px;
   border-radius:5px;
   border: 1px solid rgba(0, 0, 0, 0.14);
@@ -365,20 +365,18 @@ path#home{
 svg.onbar{
   z-index: 1;
 }
-
-.search1border {
+.search1border{
     position: absolute;
     width: 45px;
     height: 45px;
-    left: 38px;
+    left: 19px;
     z-index: 1;
     display: flex;
     justify-content: center;
     background-color: #11D4FF;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  }
+    border: 1px solid rgba(0, 0, 0, 0.14);
 hr{
   width:100%;
 
