@@ -74,29 +74,6 @@ function switchFtoL() {
    document.getElementById("found").style.backgroundColor = "#2196F3";
 }
 
-
-
-var clicked = 0;
-var paragraph;
-var idBefore;
-
-// // user clicks on more info
-// function moreInfo(e) {
-//    e.preventDefault();
-//    var color = document.getElementById("lost").style.backgroundColor;
-//    id = $(this).closest('.individual').attr('id');
-
-//    // display or hide information in span
-//    if (clicked == 0) {
-//       $("#" + id + " span").css('display', 'block');
-//       $("#" + id + " button").html("<i class='fa fa-angle-up'></i>");
-//       clicked = 1;
-//    } else {
-//       $("#" + id + " span").css('display', 'none');
-//       $("#" + id + " button").html("<i class='fa fa-angle-down'></i>");
-//       clicked = 0;
-//    }
-// }
  function sortOld(){
   if (window.location.href.indexOf('/lost') >= 0) {
           window.location.href = '/sortLost'; 

@@ -142,7 +142,7 @@ form.example{
 button.search{
     background-color: transparent;
     padding: 10px;
-    font-size: 22px;
+    font-size: 16px;
     width: 75px;
     height: 45px;
     cursor: pointer;
@@ -162,7 +162,7 @@ button.search{
 .dropbtn{
     background-color: transparent;
     padding: 10px;
-    font-size: 20px;
+    font-size: 17px;
     width: 75px;
     height: 45px;
     color: rgba(0, 0, 0, 0.54);
@@ -270,7 +270,7 @@ p.date{
     width: 100%;
     padding-left: 30px;
     font-size: 18px;
-    font-weight: lighter;
+    font-weight: 400;
 }
 .pad2 {
     padding-left: 30px;
