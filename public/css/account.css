@@ -96,6 +96,7 @@ h3 {
 
 }
 .img img{
+  object-fit: cover;
   vertical-align: middle;
   border-radius: 50%;
   border: 4px white;
