@@ -42,10 +42,12 @@ h3 {
 }
 
 .logout button {
+    font-family: "Helvetica Neue";
     display: block;
-    height: 40px;
-    width: 200px;
-    background-color: #3DC7E6;
+    height: 50px;
+    width: 250px;
+    padding:10px;
+    background-color: #2196F3;
     margin: 20px auto;
     position: fixed;
     bottom: 100px;
@@ -55,7 +57,6 @@ h3 {
     border-left: none;
     cursor: pointer;
     text-align: center;
-    font-weight: lighter;
     border-radius: 5px;
 }
 
