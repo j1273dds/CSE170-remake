@@ -1,44 +1,49 @@
 
+
+@font-face {
+    font-family: "poppins";
+    src: url(../font/Poppins-Regular.ttf);
+    font-weight: 1 999;
+}
 html {
-  overflow: hidden;
-  height: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 
 body {
-  height: 100%;
-  overflow: auto;
-  background-color: #FFFFFF;
-  font-family:"poppins";
+    height: 100%;
+    overflow: auto;
+    background-color: #ffffff;
+    font-family: "poppins";
 }
 
 h3 {
-   width:80%;
-   color: black;
-   height: 50px;
-   padding-left: 28px;
-   display:inline;
+    width: 80%;
+    color: black;
+    height: 50px;
+    padding-left: 28px;
+    display: inline;
 }
 
 #profilepic {
-   position: relative;
-   display: block;
-   padding: 60px;
-   font-size: 75px;
-   text-align: center;
-   z-index: -1;
- }
-
-
-.accinfo {
-   position: relative;
-   display: block;
-   padding: 10px;
+    position: relative;
+    display: block;
+    padding: 60px;
+    font-size: 75px;
+    text-align: center;
+    z-index: -1;
 }
 
-.logout{
-  display:flex;
-  justify-content: center;
-  width:100%;
+.accinfo {
+    position: relative;
+    display: block;
+    padding: 10px;
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .logout button {
@@ -46,8 +51,8 @@ h3 {
     display: block;
     height: 50px;
     width: 250px;
-    padding:10px;
-    background-color: #2196F3;
+    padding: 10px;
+    background-color: #2196f3;
     margin: 20px auto;
     position: fixed;
     bottom: 100px;
@@ -70,68 +75,69 @@ h3 {
     padding-bottom: 10px;
     padding-top: 250px;
 }
-.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img
-{
-    height:187px;
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    height: 187px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 .individual {
     background-color: #d0d0d0;
-    padding:10px;
+    padding: 10px;
 }
 .accinfo2 {
     margin-top: 10px;
-    margin-left:20px;
+    margin-left: 20px;
     margin-right: 20px;
-
 }
 
-.img{
+.img {
     width: 100%;
     margin-top: 95px;
     padding-bottom: 20px;
     position: fixed;
-
 }
-.img img{
-  object-fit: cover;
-  vertical-align: middle;
-  border-radius: 50%;
-  border: 4px white;
-  border-style: solid;
+.img img {
+    object-fit: cover;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: 4px white;
+    border-style: solid;
 }
 
-h1{  
-  color: black;
+h1 {
+    color: black;
 }
 
 .individual h1 {
     color: black;
 }
 
-h2{
-  display:block;
-  margin: auto;
-  margin-bottom: 30px;
-  font-size: 20px;
-  color: black;
+h2 {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: black;
 }
 
-label{
-  display:block;
-  margin: auto;
-  font-size: 15px;
-  margin-bottom: 10px;
-  text-align: center;
+label {
+    display: block;
+    margin: auto;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
 }
-path#acc{
-  fill:#11D4FF;
-  fill-opacity:1;
+path#acc {
+    fill: #11d4ff;
+    fill-opacity: 1;
 }
-#home1{
-    border-top:3px solid #11D4FF;
+#home1 {
+    border-top: 3px solid #11d4ff;
 }
 .bottom {
     width: 100%;
@@ -139,37 +145,37 @@ path#acc{
     position: fixed;
     margin-bottom: 30px;
     /* bottom: 0px; */
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
-    margin-top:-15px;
+    margin-top: -15px;
 }
-.bottom{
-  position:fixed;
-  bottom:0px;
-  box-shadow: 0px -0.8px 0px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(27.1828px);
-  height:78px;
-  width:100%;
-  margin-bottom:0px;
+.bottom {
+    position: fixed;
+    bottom: 0px;
+    box-shadow: 0px -0.8px 0px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(27.1828px);
+    height: 78px;
+    width: 100%;
+    margin-bottom: 0px;
 }
-.bottom button{
-  width:25%;
-  border:none;
-  background-color: white;
-  padding-bottom: 20px;
+.bottom button {
+    width: 25%;
+    border: none;
+    background-color: white;
+    padding-bottom: 20px;
 }
 p.logo {
     position: absolute;
     top: 55%;
     margin-left: 5%;
     font-size: 22px;
-    color: #11D4FF;
+    color: #11d4ff;
 }
 .top {
     position: fixed;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     z-index: 1;
     height: 78px;
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.6);
