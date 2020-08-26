@@ -1,36 +1,36 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <script src="js/signin.js"></script>
-   <link href="/css/signin.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <title>Create Account</title>
-</head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <script src="js/signin.js"></script>
+        <link href="/css/signin.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <title>Create Account</title>
+    </head>
 
-<body style="background-color: white;background-image: none;">
-   <div class="image">
-      <img src="logo1.png" class="img-responsive">
-   </div>
-   <div>
-      <form id="signinForm" action="/addAcc" onsubmit="home()">
-         <h3>Email</h3>
-         <input type="text" name="email">
-         <h3>Username</h3>
-         <input type="text" name="username">
-         <h3>Password</h3>
-         <input type="password" name="password">
-         <h3>Confirm Password</h3>
-         <input type="password" name="password">
-         <h3>Profile Picture</h3>
-         <input type="url" class="form-control" id="image" name="image"><br><br>
-         <button type="submit" class="submit">Create Account</button>
-      </form>
-   </div>
-   <div class="back"> 
-	   <button type="submit" onclick="window.location.href = '/';"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
-   </div>
-</body>
+    <body style="background-color: white; background-image: none;">
+        <div class="image">
+            <img src="logo1.png" class="img-responsive" />
+        </div>
+        <div>
+            <form id="signinForm" action="/addAcc" onsubmit="home()">
+                <h3>Email</h3>
+                <input type="text" name="email" />
+                <h3>Username</h3>
+                <input type="text" name="username" />
+                <h3>Password</h3>
+                <input type="password" name="password" />
+                <h3>Confirm Password</h3>
+                <input type="password" name="password" />
+                <h3>Profile Picture</h3>
+                <input type="url" class="form-control" id="image" name="image" /><br />
+                <br />
+                <button type="submit" class="submit">Create Account</button>
+            </form>
+        </div>
+        <div class="back">
+            <button type="submit" onclick="window.location.href = '/';"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        </div>
+    </body>
 </html>

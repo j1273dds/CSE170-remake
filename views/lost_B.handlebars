@@ -1,73 +1,65 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1TWM3X3E"></script>
-	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1TWM3X3E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-  		gtag('config', 'G-WZ1TWM3X3E');
-	</script>
-   <title>Items</title>
-   <link rel="stylesheet" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <link href="/css/introHCI2.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery.js"></script>
-   <script src="js/introHCI.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-	<div class="bottom">
-<!-- 			<button class="back" onclick="window.location.href = '/';"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
- -->			<button id="lost" class="lost" onclick="switchFtoL()" style="height:70px;">Lost</button>
-			<button id="found" class="found" onclick="switchLtoF()" style="height:70px;">Found</button>
-<!-- 			<button id="account" class="account" onclick="window.location.href = 'account';"><i class="fa fa-user" aria-hidden="true"></i></button> -->
-	</div>
-	<div class="post" style="margin-top:100px;">
-		{{#each posts}}
-		   <div class="individual" id="{{id}}">
-		   	  <p id="moreText">{{date}}</p>
-		      <img src="{{image}}" class="img-responsive">
-		      <h1>{{name}}</h1>
-		      <p>Description: {{description}}</p>
-		      <!-- Add contact info -->
-            <span id="moreText"><p>Last Seen: {{lastseen}}</p><p>Date: {{date}}</p></span>
+            gtag("config", "G-WZ1TWM3X3E");
+        </script>
+        <title>Items</title>
+        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link href="/css/introHCI2.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="js/introHCI.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body>
+        <div class="bottom">
+            <button id="lost" class="lost" onclick="switchFtoL()" style="height: 70px;">Lost</button>
+            <button id="found" class="found" onclick="switchLtoF()" style="height: 70px;">Found</button>
+        </div>
+        <div class="post" style="margin-top: 100px;">
+            {{#each posts}}
+            <div class="individual" id="{{id}}">
+                <p id="moreText">{{date}}</p>
+                <img src="{{image}}" class="img-responsive" />
+                <h1>{{name}}</h1>
+                <p>Description: {{description}}</p>
+                <!-- Add contact info -->
+                <span id="moreText">
+                    <p>Last Seen: {{lastseen}}</p>
+                    <p>Date: {{date}}</p>
+                </span>
 
-            <button class="more"><i class="fa fa-angle-down"></i></button>
-		   </div>
-		{{/each}}
-	</div>
-	<div class="middle">
-		<button class="plus" onclick="window.location.href = 'post';" style="bottom:80px"><i class="fa fa-plus" aria-hidden="true"></i>     New Post</button>
-			<div class="top" style="bottom:-5px">
-		<form class="example" action="/lost">
-	  		<input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search for names.." title="Type in a name">
-	  		<button type="submit"><i class="fa fa-search"></i></button>
-		</form>
-		<div class="dropup" style="display:none; position: relative; display: inline-block; float: left; width: 15%;">
-		  <button class="dropbtn"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
-		  <div class="dropup-content">
-		  	  <a>Sort By:</a>
-			  <a onclick="sortNew()">Date Posted (Newest)</a>
-			  <a onclick="sortOld()" >Date Posted (Oldest)</a>
-	 	  </div>
-		</div>
-	</div>
-	</div>
-	<div class="bottom">
-<!-- 			<button class="back" onclick="window.location.href = '/';">
-				<i class="fa fa-arrow-left" aria-hidden="true"></i>
-				Login
-			</button>
-			<button id="lost" class="lost" onclick="switchFtoL()">Lost</button>
-			<button id="found" class="found" onclick="switchLtoF()">Found</button>
-			<button id="account" class="account" onclick="window.location.href = 'account';"><i class="fa fa-user" aria-hidden="true"></i></button> -->
-	</div>
-</body>
-
+                <button class="more"><i class="fa fa-angle-down"></i></button>
+            </div>
+            {{/each}}
+        </div>
+        <div class="middle">
+            <button class="plus" onclick="window.location.href = 'post';" style="bottom: 80px;"><i class="fa fa-plus" aria-hidden="true"></i> New Post</button>
+            <div class="top" style="bottom: -5px;">
+                <form class="example" action="/lost">
+                    <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search for names.." title="Type in a name" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="dropup" style="display: none; position: relative; display: inline-block; float: left; width: 15%;">
+                    <button class="dropbtn"><i class="fa fa-caret-up" aria-hidden="true"></i></button>
+                    <div class="dropup-content">
+                        <a>Sort By:</a>
+                        <a onclick="sortNew()">Date Posted (Newest)</a>
+                        <a onclick="sortOld()">Date Posted (Oldest)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -1,91 +1,119 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1TWM3X3E"></script>
-	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ1TWM3X3E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-  		gtag('config', 'G-WZ1TWM3X3E');
-	</script>
-   <link rel="stylesheet" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <link href="/css/introHCI2.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery.js"></script>
-   <script src="js/introHCI.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script src="https://kit.fontawesome.com/afe8ca4a6e.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+            gtag("config", "G-WZ1TWM3X3E");
+        </script>
+        <link rel="stylesheet" href="css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link href="/css/introHCI2.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="js/introHCI.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <script src="https://kit.fontawesome.com/afe8ca4a6e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    </head>
+    <body>
+        <div class="top">
+            <div class="dropdown">
+                <button type="button" class="dropbtn" onclick="myFunction()"><i class="fas fa-sliders-h" style="pointer-events: none;"></i></button>
+                <div class="container" id="container1">
+                    <a id="a1" onclick="sortOld()">Sort By Oldest</a>
+                    <a id="a2" onclick="sortNew()">Sort By Newest</a>
+                </div>
+            </div>
+            <div class="but">
+                <button id="lost" class="lost" onclick="switchFtoL()">Lost</button>
+                <button id="found" class="found" onclick="switchLtoF()">Found</button>
+            </div>
+            <div class="search">
+                <button type="button" class="search" onclick="myFunctionShow()"><i style="pointer-events: none;" class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="search1" id="myInput1">
+            <div class="search1border">
+                <svg class="onbar" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+                    <path
+                        d="M21.6992 19.0204L17.4152 14.7368C17.2219 14.5435 16.9598 14.4361 16.6848 14.4361H15.9844C17.1703 12.9194 17.875 11.0118 17.875 8.93663C17.875 4 13.8746 0 8.9375 0C4.00039 0 0 4 0 8.93663C0 13.8733 4.00039 17.8733 8.9375 17.8733C11.0129 17.8733 12.9207 17.1686 14.4375 15.9828V16.6831C14.4375 16.9581 14.5449 17.2202 14.7383 17.4135L19.0223 21.6971C19.4262 22.101 20.0793 22.101 20.4789 21.6971L21.6949 20.4812C22.0988 20.0773 22.0988 19.4243 21.6992 19.0204ZM8.9375 14.4361C5.89961 14.4361 3.4375 11.9785 3.4375 8.93663C3.4375 5.89903 5.89531 3.43716 8.9375 3.43716C11.9754 3.43716 14.4375 5.89474 14.4375 8.93663C14.4375 11.9742 11.9797 14.4361 8.9375 14.4361Z"
+                        fill="white"
+                    />
+                </svg>
+            </div>
+            <!--This is where it happens-->
+            <input type="search" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search..." title="Type in a name" />
+        </div>
+        <div class="post">
+            {{#each posts}}
+            <div class="individual" id="{{id}}">
+                <h1 id="pad12" class="pad1">{{name}}</h1>
+                <p class="pad2">posted: {{date}}</p>
+                <img src="{{image}}" class="img-responsive" />
 
-</head>
-<body>
-	<div class="top">
-<!-- 		<form class="example" action="account">
-	  		 <input type="text" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search for items..." title="Type in a name"style="display: none;">
-	  		 <button id="account" class="account" onclick="window.location.href = 'account';"><i class="fa fa-user" aria-hidden="true"></i></button> -->
-<!-- </form> -->
-		<div class="dropdown"> 
-		  <button type="button" class="dropbtn" onclick="myFunction()"><i class="fas fa-sliders-h" style="pointer-events: none;"></i></button>
-		  <div class="container" id="container1">
-		  	<a id="a1" onclick="sortOld()">Sort By Oldest</a>
-		  	<a id="a2" onclick="sortNew()">Sort By Newest</a>
-		  </div>
-		</div>
-			<div class="but">
-	 				<button id="lost" class="lost" onclick="switchFtoL()">Lost</button>
-					<button id="found" class="found" onclick="switchLtoF()">Found</button>
-			</div>
-				<div class="search">
-			 		<button type = "button" class="search" onclick="myFunctionShow()"><i style="pointer-events: none;" class="fa fa-search" aria-hidden="true"></i></button>
-				</div>
-	</div>
-			<div class="search1" id="myInput1">
-				 <div class="search1border">	
-				 <svg class="onbar" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
-<path d="M21.6992 19.0204L17.4152 14.7368C17.2219 14.5435 16.9598 14.4361 16.6848 14.4361H15.9844C17.1703 12.9194 17.875 11.0118 17.875 8.93663C17.875 4 13.8746 0 8.9375 0C4.00039 0 0 4 0 8.93663C0 13.8733 4.00039 17.8733 8.9375 17.8733C11.0129 17.8733 12.9207 17.1686 14.4375 15.9828V16.6831C14.4375 16.9581 14.5449 17.2202 14.7383 17.4135L19.0223 21.6971C19.4262 22.101 20.0793 22.101 20.4789 21.6971L21.6949 20.4812C22.0988 20.0773 22.0988 19.4243 21.6992 19.0204ZM8.9375 14.4361C5.89961 14.4361 3.4375 11.9785 3.4375 8.93663C3.4375 5.89903 5.89531 3.43716 8.9375 3.43716C11.9754 3.43716 14.4375 5.89474 14.4375 8.93663C14.4375 11.9742 11.9797 14.4361 8.9375 14.4361Z" fill="white"/></svg>
-				</div>
-				 <!--This is where it happens-->		
-		  		 <input type="search" id="myInput" onkeyup="myFunctionSearch()" placeholder="Search..." title="Type in a name">
-		  		</div>
-	<div class="post">
-		{{#each posts}}
-		   <div class="individual" id="{{id}}">
-		   	  <h1 id="pad12" class="pad1">{{name}}</h1>
-		   	   <p class="pad2">posted: {{date}}</p>
-		      <img src="{{image}}" class="img-responsive">
+                <button type="button" class="options">
+                    <svg width="20" height="6" viewBox="0 0 22 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.8125 3.375C13.8125 5.24062 12.4329 6.75 10.7278 6.75C9.02269 6.75 7.64316 5.24062 7.64316 3.375C7.64316 1.50938 9.02269 0 10.7278 0C12.4329 0 13.8125 1.50938 13.8125 3.375ZM18.2681 0C16.5629 0 15.1834 1.50938 15.1834 3.375C15.1834 5.24062 16.5629 6.75 18.2681 6.75C19.9732 6.75 21.3527 5.24062 21.3527 3.375C21.3527 1.50938 19.9732 0 18.2681 0ZM3.18756 0C1.48243 0 0.102905 1.50938 0.102905 3.375C0.102905 5.24062 1.48243 6.75 3.18756 6.75C4.89268 6.75 6.27221 5.24062 6.27221 3.375C6.27221 1.50938 4.89268 0 3.18756 0Z"
+                            fill="black"
+                        />
+                    </svg>
+                </button>
+                <p class="pad">{{description}}</p>
+                <hr />
+            </div>
+            {{/each}}
+        </div>
+        <div class="bottom">
+            <button id="home1" type="button" onclick="home()">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="home" d="M9.16671 18.3333V12.8333H12.8334V18.3333H17.4167V11H20.1667L11 2.75L1.83337 11H4.58337V18.3333H9.16671Z" fill="#11D4FF" />
+                </svg>
+            </button>
+            <button type="button" onclick="window.location.href = 'post';">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M1.83337 11C1.83337 5.93999 5.94005 1.83331 11 1.83331C16.06 1.83331 20.1667 5.93999 20.1667 11C20.1667 16.06 16.06 20.1666 11 20.1666C5.94005 20.1666 1.83337 16.06 1.83337 11ZM11.9167 11.9166H15.5834V10.0833H11.9167V6.41665H10.0834V10.0833H6.41671V11.9166H10.0834V15.5833H11.9167V11.9166Z"
+                        fill="black"
+                        fill-opacity="0.54"
+                    />
+                </svg>
+            </button>
 
-		    <button type="button" class="options"><svg width="20" height="6" viewBox="0 0 22 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.8125 3.375C13.8125 5.24062 12.4329 6.75 10.7278 6.75C9.02269 6.75 7.64316 5.24062 7.64316 3.375C7.64316 1.50938 9.02269 0 10.7278 0C12.4329 0 13.8125 1.50938 13.8125 3.375ZM18.2681 0C16.5629 0 15.1834 1.50938 15.1834 3.375C15.1834 5.24062 16.5629 6.75 18.2681 6.75C19.9732 6.75 21.3527 5.24062 21.3527 3.375C21.3527 1.50938 19.9732 0 18.2681 0ZM3.18756 0C1.48243 0 0.102905 1.50938 0.102905 3.375C0.102905 5.24062 1.48243 6.75 3.18756 6.75C4.89268 6.75 6.27221 5.24062 6.27221 3.375C6.27221 1.50938 4.89268 0 3.18756 0Z" fill="black"/>
-</svg></button>
-		      <p class="pad">{{description}}</p>
- 			<hr>
-</div>
-		{{/each}}
-	</div>
-	<div class="bottom">
-		<button id="home1" type = "button" onclick="home()"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="home"d="M9.16671 18.3333V12.8333H12.8334V18.3333H17.4167V11H20.1667L11 2.75L1.83337 11H4.58337V18.3333H9.16671Z" fill="#11D4FF"/>
-</svg>
-</button>
-		<button type = "button" onclick="window.location.href = 'post';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.83337 11C1.83337 5.93999 5.94005 1.83331 11 1.83331C16.06 1.83331 20.1667 5.93999 20.1667 11C20.1667 16.06 16.06 20.1666 11 20.1666C5.94005 20.1666 1.83337 16.06 1.83337 11ZM11.9167 11.9166H15.5834V10.0833H11.9167V6.41665H10.0834V10.0833H6.41671V11.9166H10.0834V15.5833H11.9167V11.9166Z" fill="black" fill-opacity="0.54"/>
-</svg></button>
+            <button type="button">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M16.5001 14.4375V9.85417C16.5001 7.03999 15.0059 4.68416 12.3751 4.06082V3.4375C12.3751 2.67668 11.7609 2.0625 11.0001 2.0625C10.2392 2.0625 9.62508 2.67668 9.62508 3.4375V4.06082C7.00342 4.68416 5.50008 7.03084 5.50008 9.85417V14.4375L3.66675 16.2708V17.1875H18.3334V16.2708L16.5001 14.4375ZM11.0001 19.9375C12.0084 19.9375 12.8334 19.1125 12.8334 18.1042H9.16675C9.16675 19.1125 9.99175 19.9375 11.0001 19.9375ZM7.33341 15.3542H14.6667V9.85417C14.6667 7.58082 13.2826 5.72917 11.0001 5.72917C8.71759 5.72917 7.33341 7.58082 7.33341 9.85417V15.3542Z"
+                        fill="black"
+                        fill-opacity="0.54"
+                    />
+                </svg>
+            </button>
 
-		<button type = "button"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5001 14.4375V9.85417C16.5001 7.03999 15.0059 4.68416 12.3751 4.06082V3.4375C12.3751 2.67668 11.7609 2.0625 11.0001 2.0625C10.2392 2.0625 9.62508 2.67668 9.62508 3.4375V4.06082C7.00342 4.68416 5.50008 7.03084 5.50008 9.85417V14.4375L3.66675 16.2708V17.1875H18.3334V16.2708L16.5001 14.4375ZM11.0001 19.9375C12.0084 19.9375 12.8334 19.1125 12.8334 18.1042H9.16675C9.16675 19.1125 9.99175 19.9375 11.0001 19.9375ZM7.33341 15.3542H14.6667V9.85417C14.6667 7.58082 13.2826 5.72917 11.0001 5.72917C8.71759 5.72917 7.33341 7.58082 7.33341 9.85417V15.3542Z" fill="black" fill-opacity="0.54"/>
-</svg></button>
-
-		<button type = "button" onclick="window.location.href = 'account';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9999 1.83331C5.9399 1.83331 1.83325 5.93999 1.83325 11C1.83325 16.06 5.9399 20.1666 10.9999 20.1666C16.0599 20.1666 20.1666 16.06 20.1666 11C20.1666 5.93999 16.0599 1.83331 10.9999 1.83331ZM6.48071 16.7566C6.87492 15.9316 9.27659 15.125 10.9999 15.125C12.7233 15.125 15.134 15.9316 15.519 16.7566C14.2723 17.7466 12.7049 18.3333 10.9999 18.3333C9.29483 18.3333 7.72735 17.7466 6.48071 16.7566ZM10.9999 13.2916C12.3383 13.2916 15.5192 13.8325 16.8299 15.4275C17.7649 14.1991 18.3333 12.6683 18.3333 11C18.3333 6.95748 15.0424 3.66665 10.9999 3.66665C6.95739 3.66665 3.66659 6.95748 3.66659 11C3.66659 12.6683 4.23492 14.1991 5.16993 15.4275C6.48071 13.8325 9.66159 13.2916 10.9999 13.2916ZM10.9999 5.49998C9.22168 5.49998 7.79159 6.92998 7.79159 8.70831C7.79159 10.4866 9.22168 11.9166 10.9999 11.9166C12.7782 11.9166 14.2083 10.4866 14.2083 8.70831C14.2083 6.92998 12.7782 5.49998 10.9999 5.49998ZM9.62492 8.70831C9.62492 9.46915 10.2391 10.0833 10.9999 10.0833C11.7608 10.0833 12.3749 9.46915 12.3749 8.70831C12.3749 7.94749 11.7608 7.33331 10.9999 7.33331C10.2391 7.33331 9.62492 7.94749 9.62492 8.70831Z" fill="black" fill-opacity="0.54"/>
-</svg></button>
-	</div>
-</body>
-
+            <button type="button" onclick="window.location.href = 'account';">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M10.9999 1.83331C5.9399 1.83331 1.83325 5.93999 1.83325 11C1.83325 16.06 5.9399 20.1666 10.9999 20.1666C16.0599 20.1666 20.1666 16.06 20.1666 11C20.1666 5.93999 16.0599 1.83331 10.9999 1.83331ZM6.48071 16.7566C6.87492 15.9316 9.27659 15.125 10.9999 15.125C12.7233 15.125 15.134 15.9316 15.519 16.7566C14.2723 17.7466 12.7049 18.3333 10.9999 18.3333C9.29483 18.3333 7.72735 17.7466 6.48071 16.7566ZM10.9999 13.2916C12.3383 13.2916 15.5192 13.8325 16.8299 15.4275C17.7649 14.1991 18.3333 12.6683 18.3333 11C18.3333 6.95748 15.0424 3.66665 10.9999 3.66665C6.95739 3.66665 3.66659 6.95748 3.66659 11C3.66659 12.6683 4.23492 14.1991 5.16993 15.4275C6.48071 13.8325 9.66159 13.2916 10.9999 13.2916ZM10.9999 5.49998C9.22168 5.49998 7.79159 6.92998 7.79159 8.70831C7.79159 10.4866 9.22168 11.9166 10.9999 11.9166C12.7782 11.9166 14.2083 10.4866 14.2083 8.70831C14.2083 6.92998 12.7782 5.49998 10.9999 5.49998ZM9.62492 8.70831C9.62492 9.46915 10.2391 10.0833 10.9999 10.0833C11.7608 10.0833 12.3749 9.46915 12.3749 8.70831C12.3749 7.94749 11.7608 7.33331 10.9999 7.33331C10.2391 7.33331 9.62492 7.94749 9.62492 8.70831Z"
+                        fill="black"
+                        fill-opacity="0.54"
+                    />
+                </svg>
+            </button>
+        </div>
+    </body>
 </html>
-
 

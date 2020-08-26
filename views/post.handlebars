@@ -1,79 +1,70 @@
-<!doctype html>
-<head>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="apple-mobile-web-app-capable" content="yes">
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="apple-mobile-web-app-capable" content="yes">
 
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link href="css/post.css" rel="stylesheet">
-   <script src="js/post.js"></script>
-    <script src="js/introHCI.js"></script>
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="css/post.css" rel="stylesheet">
+       <script src="js/post.js"></script>
+        <script src="js/introHCI.js"></script>
 
-</head>
+    </head>
 
-<body>
-    <div class="top">
-    <p class="logo" style="float:left">Find and Seek</p>
-    </div>
-    <form id="addPostForm" role="form" method="get" action="/add">
-      <div class="post">
-        <p id="header">Create post</p>
-        <div class="form-group">
-          <br>
-          <label for="name">Item Name:</label>
-          <input type="text" class="form-control" id="name" name="name">
+    <body>
+        <div class="top">
+        <p class="logo" style="float:left">Find and Seek</p>
         </div>
+        <form id="addPostForm" role="form" method="get" action="/add">
+          <div class="post">
+            <p id="header">Create post</p>
+            <div class="form-group">
+              <br>
+              <label for="name">Item Name:</label>
+              <input type="text" class="form-control" id="name" name="name">
+            </div>
 
 
-        <div class="form-groupLost">
-          <input type="button" id="LostBtn" class="btn btn-default" value="Lost Item" onclick="lost()"></input>
-          <input type="button" id="FoundBtn" class="btn btn-default" value="Found Item" onclick="found()"></input>
-          <input type="text" class="form-control" id="lost_found" placeholder="lost_found" name="lost_found" style="display:none;"></input>
-        </div>
+            <div class="form-groupLost">
+              <input type="button" id="LostBtn" class="btn btn-default" value="Lost Item" onclick="lost()"></input>
+              <input type="button" id="FoundBtn" class="btn btn-default" value="Found Item" onclick="found()"></input>
+              <input type="text" class="form-control" id="lost_found" placeholder="lost_found" name="lost_found" style="display:none;"></input>
+            </div>
 
-        <div class="form-groupDescription">
-          <label for="description">Description:</label>
-          <textarea type="text" class="form-control" id="description" name="description" cols="30" rows="10"></textarea>
-        </div>
-        
-<!--         <div class="form-group">
-          <label for="description">Last Seen / Dropped Off At:</label>
-          <p class="op">(Optional)</p>
-          <input type="text" class="form-control" id="lastseen" name="lastseen"></input>
-        </div> -->
-<!--         <div class="form-group">
-          <label for="contact">Contact Info:</label>
-          <p class="extra">Name, Phone Number, Email</p>
-          <input type="text" class="form-control" id="contact" name="contact">
-        </div> -->
+            <div class="form-groupDescription">
+              <label for="description">Description:</label>
+              <textarea type="text" class="form-control" id="description" name="description" cols="30" rows="10"></textarea>
+            </div>
 
-        <div class="form-group">
-          <label for="image">Image:</label>
-          <p class="op">(Optional)</p>
-          <input type="url" class="form-control" id="image" name="image"><br><br>
-          <label for="newDate"></label>
-          <input type="submit" id="submitBtn" class="btn btn-default" value="post" onclick="date()"></input>
-        </div>
+            <div class="form-group">
+              <label for="image">Image:</label>
+              <p class="op">(Optional)</p>
+              <input type="url" class="form-control" id="image" name="image"><br><br>
+              <label for="newDate"></label>
+              <input type="submit" id="submitBtn" class="btn btn-default" value="post" onclick="date()"></input>
+            </div>
+          </div>
+        </form>
+          <div class="bottom">
+
+        <button type = "button" onclick="home()"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path id="home"d="M9.16671 18.3333V12.8333H12.8334V18.3333H17.4167V11H20.1667L11 2.75L1.83337 11H4.58337V18.3333H9.16671Z" fill="black" fill-opacity="0.54"/>
+    </svg>
+    </button>
+        <button id="home1" type = "button" onclick="window.location.href = 'post';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.83337 11C1.83337 5.93999 5.94005 1.83331 11 1.83331C16.06 1.83331 20.1667 5.93999 20.1667 11C20.1667 16.06 16.06 20.1666 11 20.1666C5.94005 20.1666 1.83337 16.06 1.83337 11ZM11.9167 11.9166H15.5834V10.0833H11.9167V6.41665H10.0834V10.0833H6.41671V11.9166H10.0834V15.5833H11.9167V11.9166Z" fill="#11D4FF"/>
+    </svg></button>
+
+        <button type = "button"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5001 14.4375V9.85417C16.5001 7.03999 15.0059 4.68416 12.3751 4.06082V3.4375C12.3751 2.67668 11.7609 2.0625 11.0001 2.0625C10.2392 2.0625 9.62508 2.67668 9.62508 3.4375V4.06082C7.00342 4.68416 5.50008 7.03084 5.50008 9.85417V14.4375L3.66675 16.2708V17.1875H18.3334V16.2708L16.5001 14.4375ZM11.0001 19.9375C12.0084 19.9375 12.8334 19.1125 12.8334 18.1042H9.16675C9.16675 19.1125 9.99175 19.9375 11.0001 19.9375ZM7.33341 15.3542H14.6667V9.85417C14.6667 7.58082 13.2826 5.72917 11.0001 5.72917C8.71759 5.72917 7.33341 7.58082 7.33341 9.85417V15.3542Z" fill="black" fill-opacity="0.54"/>
+    </svg></button>
+
+        <button type = "button" onclick="window.location.href = 'account';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9999 1.83331C5.9399 1.83331 1.83325 5.93999 1.83325 11C1.83325 16.06 5.9399 20.1666 10.9999 20.1666C16.0599 20.1666 20.1666 16.06 20.1666 11C20.1666 5.93999 16.0599 1.83331 10.9999 1.83331ZM6.48071 16.7566C6.87492 15.9316 9.27659 15.125 10.9999 15.125C12.7233 15.125 15.134 15.9316 15.519 16.7566C14.2723 17.7466 12.7049 18.3333 10.9999 18.3333C9.29483 18.3333 7.72735 17.7466 6.48071 16.7566ZM10.9999 13.2916C12.3383 13.2916 15.5192 13.8325 16.8299 15.4275C17.7649 14.1991 18.3333 12.6683 18.3333 11C18.3333 6.95748 15.0424 3.66665 10.9999 3.66665C6.95739 3.66665 3.66659 6.95748 3.66659 11C3.66659 12.6683 4.23492 14.1991 5.16993 15.4275C6.48071 13.8325 9.66159 13.2916 10.9999 13.2916ZM10.9999 5.49998C9.22168 5.49998 7.79159 6.92998 7.79159 8.70831C7.79159 10.4866 9.22168 11.9166 10.9999 11.9166C12.7782 11.9166 14.2083 10.4866 14.2083 8.70831C14.2083 6.92998 12.7782 5.49998 10.9999 5.49998ZM9.62492 8.70831C9.62492 9.46915 10.2391 10.0833 10.9999 10.0833C11.7608 10.0833 12.3749 9.46915 12.3749 8.70831C12.3749 7.94749 11.7608 7.33331 10.9999 7.33331C10.2391 7.33331 9.62492 7.94749 9.62492 8.70831Z" fill="black" fill-opacity="0.54"/>
+    </svg></button>
       </div>
-    </form>
-      <div class="bottom">
-
-    <button type = "button" onclick="home()"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="home"d="M9.16671 18.3333V12.8333H12.8334V18.3333H17.4167V11H20.1667L11 2.75L1.83337 11H4.58337V18.3333H9.16671Z" fill="black" fill-opacity="0.54"/>
-</svg>
-</button>
-    <button id="home1" type = "button" onclick="window.location.href = 'post';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M1.83337 11C1.83337 5.93999 5.94005 1.83331 11 1.83331C16.06 1.83331 20.1667 5.93999 20.1667 11C20.1667 16.06 16.06 20.1666 11 20.1666C5.94005 20.1666 1.83337 16.06 1.83337 11ZM11.9167 11.9166H15.5834V10.0833H11.9167V6.41665H10.0834V10.0833H6.41671V11.9166H10.0834V15.5833H11.9167V11.9166Z" fill="#11D4FF"/>
-</svg></button>
-
-    <button type = "button"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5001 14.4375V9.85417C16.5001 7.03999 15.0059 4.68416 12.3751 4.06082V3.4375C12.3751 2.67668 11.7609 2.0625 11.0001 2.0625C10.2392 2.0625 9.62508 2.67668 9.62508 3.4375V4.06082C7.00342 4.68416 5.50008 7.03084 5.50008 9.85417V14.4375L3.66675 16.2708V17.1875H18.3334V16.2708L16.5001 14.4375ZM11.0001 19.9375C12.0084 19.9375 12.8334 19.1125 12.8334 18.1042H9.16675C9.16675 19.1125 9.99175 19.9375 11.0001 19.9375ZM7.33341 15.3542H14.6667V9.85417C14.6667 7.58082 13.2826 5.72917 11.0001 5.72917C8.71759 5.72917 7.33341 7.58082 7.33341 9.85417V15.3542Z" fill="black" fill-opacity="0.54"/>
-</svg></button>
-
-    <button type = "button" onclick="window.location.href = 'account';"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9999 1.83331C5.9399 1.83331 1.83325 5.93999 1.83325 11C1.83325 16.06 5.9399 20.1666 10.9999 20.1666C16.0599 20.1666 20.1666 16.06 20.1666 11C20.1666 5.93999 16.0599 1.83331 10.9999 1.83331ZM6.48071 16.7566C6.87492 15.9316 9.27659 15.125 10.9999 15.125C12.7233 15.125 15.134 15.9316 15.519 16.7566C14.2723 17.7466 12.7049 18.3333 10.9999 18.3333C9.29483 18.3333 7.72735 17.7466 6.48071 16.7566ZM10.9999 13.2916C12.3383 13.2916 15.5192 13.8325 16.8299 15.4275C17.7649 14.1991 18.3333 12.6683 18.3333 11C18.3333 6.95748 15.0424 3.66665 10.9999 3.66665C6.95739 3.66665 3.66659 6.95748 3.66659 11C3.66659 12.6683 4.23492 14.1991 5.16993 15.4275C6.48071 13.8325 9.66159 13.2916 10.9999 13.2916ZM10.9999 5.49998C9.22168 5.49998 7.79159 6.92998 7.79159 8.70831C7.79159 10.4866 9.22168 11.9166 10.9999 11.9166C12.7782 11.9166 14.2083 10.4866 14.2083 8.70831C14.2083 6.92998 12.7782 5.49998 10.9999 5.49998ZM9.62492 8.70831C9.62492 9.46915 10.2391 10.0833 10.9999 10.0833C11.7608 10.0833 12.3749 9.46915 12.3749 8.70831C12.3749 7.94749 11.7608 7.33331 10.9999 7.33331C10.2391 7.33331 9.62492 7.94749 9.62492 8.70831Z" fill="black" fill-opacity="0.54"/>
-</svg></button>
-  </div>
-</body>
+    </body>
+</html>
